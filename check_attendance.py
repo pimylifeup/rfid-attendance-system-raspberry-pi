@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import time
 import RPi.GPIO as GPIO
-import SimpleMFRC522
+from mfrc522 import SimpleMFRC522
 import mysql.connector
 import Adafruit_CharLCD as LCD
 
@@ -13,7 +13,7 @@ db = mysql.connector.connect(
 )
 
 cursor = db.cursor()
-reader = SimpleMFRC522.SimpleMFRC522()
+reader = SimpleMFRC522()
 
 lcd = LCD.Adafruit_CharLCD(4, 24, 23, 17, 18, 22, 16, 2, 4);
 
