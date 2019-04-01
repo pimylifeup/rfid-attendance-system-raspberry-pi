@@ -28,7 +28,7 @@ try:
 
     lcd.clear()
 
-    if cursor.rowcount != 0:
+    if cursor.rowcount >= 1:
       lcd.message("Welcome " + result[1])
       cursor.execute("INSERT INTO attendance (user_id) VALUES (%s)", (result[0],) )
       db.commit()
