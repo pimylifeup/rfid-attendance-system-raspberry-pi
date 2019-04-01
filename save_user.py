@@ -27,7 +27,7 @@ try:
     cursor.execute("SELECT id FROM users WHERE rfid_uid="+str(id))
     cursor.fetchone()
 
-    if cursor.rowcount != 0:
+    if cursor.rowcount >= 1:
       lcd.clear()
       lcd.message("Overwrite\nexisting user?")
       overwrite = raw_input("Overwite (Y/N)? ")
